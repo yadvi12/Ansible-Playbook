@@ -32,3 +32,13 @@
 🔹 Will allow firewall traffic on port 8080
 
 NOTE: By default, apache web-server works on tcp port and port number 80 and the document root is /var/www/html.
+
+## How to get started?
+
+- Clone the repository.
+
+- Copy the code in the ansible controller node.
+
+- Cd to the location of the code file.
+
+- Run the command "ansible-playbook (filename)".
