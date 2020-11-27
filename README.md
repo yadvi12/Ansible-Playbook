@@ -1,6 +1,6 @@
 ## 🔰 Ansible PlayBook that does the following operations in the managed nodes 🔰
 
-### 🔸 Docker 🔸
+### Docker 
 
 🔹 Configure Docker
 
@@ -13,7 +13,7 @@
 🔹 Copy the html code in /var/www/html directory and start the web server
 
 
-### 🔸 Web-server 🔸
+### Web-server 
 
 🔹 Mount the redhat-dvd which contains 6000+ softwares
 
