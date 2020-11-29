@@ -40,7 +40,7 @@
     copy:
        dest: "{{ doc_root }}/index.html"
        content: "this is my new website \n"
-  - name: "Starting the httpd service"
+  - name: "Restarting the httpd service"
     service:
        name: "httpd"
        state: restarted
@@ -51,4 +51,7 @@
        state: enabled
        permanent: yes
        immediate: yes
+  - name: Disable SELinux
+    ansible.posix.selinux:
+       state: disabled
 
