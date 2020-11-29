@@ -1,0 +1,2 @@
+192.168.43.4 ansible_user=root  ansible_ssh_pass=bhalla   ansible_connection=ssh
+ 

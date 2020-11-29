@@ -1,0 +1,3 @@
+dvd_dir: "/dvd5"
+doc_root: "/var/www/lw"
+http_port: 8080
