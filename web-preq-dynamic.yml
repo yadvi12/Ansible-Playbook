@@ -1,0 +1,64 @@
+- hosts: all
+  vars_files:
+       - http_var.yml
+  tasks:
+  - name: "creating a directory to mount the dvd"        
+    file:
+       state: directory
+       path: "{{ dvd_dir }}"
+  - name: "mounting the dvd on the directory created"
+    mount:
+       src: "/dev/cdrom"
+       path: "{{ dvd_dir }}"
+       state: mounted
+       fstype: "iso9660"
+  - name: "configuring yum repository for the dvd mounted (AppStream)"
+    yum_repository:
+       baseurl: "{{ dvd_dir }}/AppStream"
+       name: "mydvd1"
+       description: "my yum dvd1 for package"
+       gpgcheck: no
+  - name: "configuring yum repository for the dvd mounted (baseOS)"
+    yum_repository:
+       baseurl: "{{ dvd_dir }}/BaseOS"
+       name: "mydvd2"
+       description: "my yum dvd2 for package"
+       gpgcheck: no
+  - name: "Installing httpd apache software"
+    package:
+       name: "httpd"
+       state: present
+  - name: "Creating the document root folder"
+    file:
+       state: directory
+       path: "{{ doc_root }}"
+  - name: "Configuring the conf file for document root and port number"
+    template:
+       dest: "/etc/httpd/conf.d/lw.conf"
+       src: "/root/lw.conf"
+    notify:
+    - restart apache
+  - name: "copying the content of website in document root folder"
+    copy:
+       dest: "{{ doc_root }}/index.html"
+       content: "this is my new website \n"
+
+  - name: "ALlowing firewall rules on the port on which webserver is running"
+    firewalld:
+       port: "{{ http_port }}/tcp"
+       state: enabled
+       permanent: yes
+       immediate: yes
+  - name: Disable SELinux
+    ansible.posix.selinux:
+       state: disabled
+  - name: ensure apache is running
+    service:
+       name: httpd
+       state: started
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+
