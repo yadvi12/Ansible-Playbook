@@ -1,0 +1,14 @@
+- hosts: 127.0.0.1
+  vars_files:
+          secret.yml
+  tasks:
+  - name: Sending an e-mail using Gmail SMTP servers
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: "{{ u }}"
+      password: "{{ p }}"
+      to: yadvibhalla2002@gmail.com
+      subject: Ansible-report
+      body: Task completed!! 
+
