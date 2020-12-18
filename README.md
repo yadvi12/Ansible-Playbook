@@ -1,4 +1,4 @@
-## 🔰 Ansible PlayBook that does the following operations in the managed nodes 🔹
+## 🔹 Ansible PlayBook that does the following operations in the managed nodes 🔹
 
 ### Docker 
 
