@@ -1,35 +1,35 @@
-## 🔰 Ansible PlayBook that does the following operations in the managed nodes 🔰
+## 🔰 Ansible PlayBook that does the following operations in the managed nodes 🔹
 
 ### Docker 
 
-🔹 Configure Docker
+- Configure Docker
 
-🔹 Start and enable Docker services
+- Start and enable Docker services
 
-🔹 Pull the httpd server image from the Docker Hub
+- Pull the httpd server image from the Docker Hub
 
-🔹 Run the docker container and expose it to the public
+- Run the docker container and expose it to the public
 
-🔹 Copy the html code in /var/www/html directory and start the web server
+- Copy the html code in /var/www/html directory and start the web server
 
 
 ### Web-server 
 
-🔹 Mount the redhat-dvd which contains 6000+ softwares
+- Mount the redhat-dvd which contains 6000+ softwares
 
-🔹 Configuration of yum
+- Configuration of yum
 
-🔹 Installation of httpd software
+- Installation of httpd software
 
-🔹 Change the document root to /var/www/lw
+- Change the document root to /var/www/lw
 
-🔹 Change the port number to 8080
+- Change the port number to 8080
 
-🔹 Copy the web-pages
+- Copy the web-pages
 
-🔹 Restart the service
+- Restart the service
 
-🔹 Will allow firewall traffic on port 8080
+- Will allow firewall traffic on port 8080
 
 NOTE: By default, apache web-server works on tcp port and port number 80 and the document root is /var/www/html.
 
