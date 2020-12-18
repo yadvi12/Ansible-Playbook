@@ -8,7 +8,7 @@
       port: 587
       username: "{{ u }}"
       password: "{{ p }}"
-      to: yadvibhalla2002@gmail.com
+      to: xyz@gmail.com
       subject: Ansible-report
       body: Task completed!! 
 
