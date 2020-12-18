@@ -33,6 +33,14 @@
 
 NOTE: By default, apache web-server works on tcp port and port number 80 and the document root is /var/www/html.
 
+### How to send mail using ansible?
+
+- For sending mail, first create a vault(secret.yml) which contains your mail id and password.
+
+- Replace the mail id xyz@gmail.com with the mail id of recipient.
+
+- Run the playbook mail.yml using the command "ansible-playbook mail.yml".
+
 ## How to get started?
 
 - Clone the repository.
